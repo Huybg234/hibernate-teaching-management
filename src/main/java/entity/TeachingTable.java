@@ -6,10 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
@@ -19,17 +16,16 @@ import java.io.Serializable;
 @AllArgsConstructor
 @XmlRootElement
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@IdClass(CompositeKey.class)
 @Table(name = "teaching_table")
 
 public class TeachingTable implements Serializable {
 
     @Id
-    @Column(nullable = false)
-    int id;
-
     @Column(name = "teacher_id", nullable = false)
     int teacherId;
 
+    @Id
     @Column(name = "subject_id", nullable = false)
     int subjectId;
 

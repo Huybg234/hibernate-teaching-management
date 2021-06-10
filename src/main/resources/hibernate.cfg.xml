@@ -7,7 +7,7 @@
         <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
         <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
         <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
-        <property name="hibernate.connection.username">hibernate_teaching_management</property>
+        <property name="hibernate.connection.username">teaching_management_hbn_rf</property>
         <property name="hibernate.connection.password">pass</property>
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
@@ -22,5 +22,6 @@
 
         <mapping class="entity.Teacher"/>
         <mapping class="entity.Subject"/>
+        <mapping class="entity.TeachingTable"/>
     </session-factory>
 </hibernate-configuration>

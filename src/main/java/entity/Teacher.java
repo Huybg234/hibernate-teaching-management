@@ -35,6 +35,6 @@ public class Teacher implements Serializable {
     @Column(name = "phone_number", nullable = false)
     String phoneNumber;
 
-    @Column(name = "level", nullable = false)
+    @Column(name = "teacher_level", nullable = false)
     String level;
 }
