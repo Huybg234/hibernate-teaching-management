@@ -36,9 +36,10 @@ public class TeachingTableController {
     }
 
     @DELETE
-    @Path("/{id}")
+    @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
-    public String removeTeachingTable(@PathParam("id") int id) {
-        return teachingTableServiceService.removeTeacher(id) ? "Xóa thành công" : "Xóa thất bại";
+    @Consumes(MediaType.APPLICATION_JSON)
+    public String removeTeachingTable(TeachingTable teachingTable) {
+        return teachingTableServiceService.removeTeachingTable(teachingTable) ? "Xóa thành công" : "Xóa thất bại";
     }
 }

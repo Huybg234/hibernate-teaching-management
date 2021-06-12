@@ -1,7 +1,6 @@
 package entity;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 public class CompositeKey implements Serializable {
     private int teacherId;
@@ -18,21 +17,16 @@ public class CompositeKey implements Serializable {
         return teacherId;
     }
 
+    public void setTeacherId(int teacherId) {
+        this.teacherId = teacherId;
+    }
+
     public int getSubjectId() {
         return subjectId;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof CompositeKey)) return false;
-        CompositeKey that = (CompositeKey) o;
-        return Objects.equals(getSubjectId(), that.getSubjectId()) &&
-                Objects.equals(getTeacherId(), that.getTeacherId());
+    public void setSubjectId(int subjectId) {
+        this.subjectId = subjectId;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getSubjectId(), getTeacherId());
-    }
 }

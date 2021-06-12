@@ -33,11 +33,10 @@ public class TeachingTableDao {
         return false;
     }
 
-    public boolean removeTeachingTable(int id) {
+    public boolean removeTeachingTable(TeachingTable teachingTable) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
             session.beginTransaction();
-            TeachingTable teachingTable = session.load(TeachingTable.class, id);
             session.delete(teachingTable);
             session.getTransaction().commit();
             return true;
